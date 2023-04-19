@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/reseter.min.css" integrity="sha512-gCJkkUMGTe73+FMwog6gIBCVJIMXRoc21l6/IPCuzxCex/1sxvO8ctb6Zd4/WWs2UMqmtnDrAdhJht5pEY0LXg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css.mobile.css" media="screen and (max-width: 600px)">
 </head>
 <body>
     <h1 class="d-none">widmice : 최고의 파트너쉽 품격있는 서비스를 제공합니다.</h1>
@@ -34,6 +35,11 @@
                     <li><a href="#">my menu</a></li>
                     <li><a href="#">login</a></li>
                 </ul>
+                <div class="d-none" id="burger">
+                    <span class="material-icons-outlined">
+                        menu
+                        </span>
+                </div>
             </div>
         </div>
         <div class="slogan">
@@ -120,5 +126,19 @@
             </div>
         </div>
     </footer>
+    <script>
+        // 1.DOM  Select(=선택) , 변수 할당(=제어)
+        const burger = document.querySelector("#burger");
+
+        // 2. EVENT(클릭, 터치..) 처리
+        burger.addEventListener("click", function() {
+            //2-1. navbar 선택하고
+            const burger = document.querySelector(".navbar");
+            //2-2. navbar 스타일 조작(30% -> 100%, height : auto -> 400px)
+            //console.log(navbar);    //확인
+            // console.dir(navbar.style);    //객체가 갖고있는 메소드, 프로퍼티 확인
+            console.log(window.getComputedStyle(navbar));   //navbar 객체에 css스타일 정보를 get
+        })
+    </script>
 </body>
 </html>
