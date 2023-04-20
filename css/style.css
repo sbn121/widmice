@@ -1,37 +1,30 @@
-html, body {
+html {
     scroll-behavior: smooth;
 }
-
 body {
-    font: 14px/1.5 bold 'Montserrat', 'Noto Sans KR', sans-serif;
-    /* 글자크기/행의 높이 글꼴1 글꼴2 글꼴3 */
-    /* line-height: ;
-    font-family: ;
-    font-size: ;
-    font-weight: ; */
-    
+    font: 14px/1.5 bold 'Montserrat', 'Noto Sans KR', sans-serif;    
 }
 ul {
     list-style-type: none;
     margin: 0;
 }
 a, a:link {
-    color: inherit;     /*상속받아서 색을 결정하겠다*/
-    text-decoration: none;
+    color: inherit; /* 상속받아서 색상을 결정하겠다 */
+    text-decoration: none; /* 텍스트-꾸밈: 없음 */
 }
 .d-none {
-    display: none;
+    display: none
 }
-/* header-navbar */
+/* header - navbar */
 header {
     height: 800px;
-    background: url(../images/visual_bg.jpg) no-repeat center top / contain; /*cover<->contain*/
+    background: url('../images/visual_bg.jpg') no-repeat center top / cover;    
 }
 .navbar {
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0,0,0,.3);
     color: white;
     position: fixed;
-    width: 100vw;   /*view port width : like percent(%) */
+    width: 100%; 
     z-index: 1000; /* 적용되는 단위가 없는 속성 */
 }
 .navbar-wrap {
@@ -43,15 +36,14 @@ header {
 }
 #gnb {
     display: flex;
-    margin: 0 0 0 15%;
-    color: white;
-    gap: 0 10px;       /*간격 : 수직-수평*/
+    margin:0 0 0 15%;
+    gap: 0 10px; /* 간격: 수직 수평 */
 }
 #gnb li {
     white-space: nowrap;
-    font-weight: bold;
+    font-weight: bold
 }
-#gnb li:hover {      
+#gnb li:hover {
     color: #58c8f6;
 }
 #gnb li a, .header-links a {
@@ -60,29 +52,30 @@ header {
 .header-links {
     display: flex;
     margin: 0 0 0 auto;
-    gap: 0 10px;
+    gap:0 10px;
     font-size: 13px;
 }
 .header-links li:nth-child(1) a::before {
-    content: '';
+    content:'';
     display: inline-block;
     width: 11px;
     height: 11px;
-    background: url(../images/topicon1.png);
-    margin:  0 5px 0 0;
+    background: url('../images/topicon1.png');
+    margin: 0 5px 0 0;
 }
 .header-links li:nth-child(2) a::before {
-    content: '';
+    content:'';
     display: inline-block;
     width: 11px;
     height: 11px;
-    background: url(../images/topicon2.png);
-    margin:  0 5px 0 0;
+    background: url('../images/topicon2.png');
+    margin: 0 5px 0 0;
 }
+
 /* slogan : balloon + text */
 .slogan {
     max-width: 1000px;
-    margin:  0 auto;
+    margin: 0 auto;
     display: flex;
     height: 800px;
     align-items: center;
@@ -90,46 +83,33 @@ header {
 }
 .balloon {
     margin: 150px 0 0 0;
-    transform: scale3d(1, 1, 1);
     animation-name: balloon-moves;
-    animation-duration: 3.5s;
-    animation-iteration-count: infinite;
-    /* animation-direction:reverse; */
+    animation-duration: 3s;
+    animation-iteration-count: infinite; /* 계속 */
+    animation-direction: alternate;
 }
-/* 애니메이션을 정의 : @keyframes 애니메이션 명 (...내용...) */
+/* 애니메이션을 정의 : @keyframes 애니메이션 명 { ...내용 ... } */
 @keyframes balloon-moves {
     0% {
-		transform: scale3d(1, 1, 1);
-	}
-	30% {
-		transform: scale3d(0.75, 1.25, 1);
-	}
-	40% {
-		transform: scale3d(1.25, 0.75, 1);
-	}
-	50% {
-		transform: scale3d(0.85, 1.15, 1);
-	}
-	65% {
-		transform: scale3d(1.05, 0.95, 1);
-	}
-	75% {
-		transform: scale3d(0.95, 1.05, 1);
-	}
-	100% {
-		transform: scale3d(1, 1, 1);
-	}
+        margin: 150px 0 0 0;
+    }
+    50% {
+        margin: 100px 0 0 0;
+    }
+    100% {
+        margin: 150px 0 0 0;
+    }
 }
 .text {
     margin: 30px 0 0 0;
 }
 .text p:nth-child(1) {
-    text-align: center;
     font-size: 60px;
     text-transform: uppercase;
     font-weight: bolder;
     color: white;
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, .4); /*x축 y축 z축 크기 투명도*/
+    text-shadow: 2px 3px 5px rgba(0,0,0,.4);
+    text-align: center;
 }
 .text p:nth-child(1)::after {
     content: "";
@@ -140,7 +120,7 @@ header {
     background: #fff;
 }
 .text p strong {
-    color: #58c8f6;
+    color: #58c8f6
 }
 .text p:nth-child(2) {
     text-align: center;
@@ -148,30 +128,30 @@ header {
     text-align: center;
     font-weight: 300;
     color: #fff;
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, .4);
+    text-shadow: 2px 3px 5px rgba(0,0,0,.4);
 }
 
-/* section-articles */
+
+
+/* section - articles */
 .map-wrap {
     max-width: 1000px;
     height: 600px;
-    margin: 0 auto 150px auto;
+    margin: 0 auto;
     display: flex;
 }
-#map {
+#map {    
     width: 60%;
     height:400px;
 }
-.info {
-    
-}
+
 .ready-wrap {
-    min-height: 500px;
+    min-height: 300px;
     text-align: center;
 }
 .ready-wrap p:nth-child(1) {
     font-size: 45px;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px 0
 }
 .ready-wrap p:nth-child(2) {
     font-size: 20px;
@@ -183,7 +163,6 @@ header {
     font-size: 30px;
     font-weight: 600;
     color: #000;
-
 }
 .co {
     width: 1000px;
@@ -192,8 +171,8 @@ header {
     background: url("../images/co_img.png") no-repeat 45% 10%,
                 url("../images/corightbg.jpg") no-repeat 500px 0,
                 url("../images/coleftbg.jpg") no-repeat 0 0;
-    background-color: yellow;
-    position:relative;
+    background-color: gold;
+    position: relative
 }
 .coflight {
     position: absolute;
@@ -205,22 +184,21 @@ header {
     position: absolute;
     width: 40%;
     left: 55%;
-    top: 33%;
+    top: 33%
 }
 .cotext p {
-    line-height: 1.6;         /*글자의 공간 자체를 늘려 여백을 만든다*/
+    line-height: 1.6
 }
-.point {
+.point { /* 종속 선택자 */
     font-size: 30px;
-    margin: 0 0 10px 0;
-    line-height: 1.8;       
+    line-height: 1.8
 }
 .btn-down {
     background: black;
     color: white;
     position: absolute;
+    left: 55%;
     top: 80%;
-    right: 30%;
     padding: 10px 15px;
 }
 .btn-down a {
@@ -230,31 +208,32 @@ header {
 
 /* business article */
 .bg {
-    background: url(../images/bus_bg.jpg) no-repeat 0 0 / contain;
+    background: url("../images/bus_bg.jpg") no-repeat 0 0 / contain;
     padding: 50px 0 30px 0;
-    margin:  100px 0 50px 0;
+    margin: 100px 0 50px 0;
 }
+
 .bg-wrap {
     max-width: 1000px;
     margin: 0 auto;
 }
 .category {
     display: flex;
-    justify-content: space-between;     /*양 끝에 먼저 두고 그 여백 사이에 나머지*/
+    justify-content: space-between;
 }
 .category figure {
-    position: relative
+    position: relative;
 }
 .category li {
-    overflow: hidden;
+    overflow: hidden
 }
 .category figure img {
-    transition: transform .4s ease-in-out;
+    transition: transform .4s ease-in-out
 }
 .category figure:hover img{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
-.category figure:hover figcaption {
+.category figure:hover figcaption{
     bottom: 0;
 }
 .category figcaption {
@@ -262,46 +241,85 @@ header {
     width: 100%;
     left: 0;
     bottom: -100px;
-    background: rgba(0, 0, 0, .8); /*red, green, blue, alpha(opacity)*/
+    background: rgba(0,0,0,.8);
     color: #fff;
     font-size: 20px;
     text-align: center;
     text-transform: capitalize;
     padding: 15px 0;
-    transition: bottom .4s ease-in-out;
+    transition: bottom .4s ease-in-out
 }
+
 
 /* footer */
 .go_top {
     position: relative;
-    text-align: center;
     top:-75px;
+    text-align: center;
 }
 .site-info {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between
 }
 .info {
     width: 70%;
     text-align: right;
 }
-/*---------------- mobile ------------------*/
-@media screen and (max-width: 600px) {
-    .header-nav, .header-links {
-        display: none;
-    }
-    .header-logo {
-        margin: 0 0 0 1rem;
-    }
+
+/* ------------ mobile ------------- */
+@media screen and (max-width: 600px){
+    html { font-size: 20px}
+    .header-nav , .header-links { display: none}
     .navbar {
-        height: 400px;
-        background: rgba(0, 0, 0, 1);
+        transition: all .4s ease-in-out;
     }
-    .navba-wrap {
+    .navbar.active {
+        height: 400px;
+        background: rgba(0,0,0,1);
+    }
+    .navbar.active .header-nav {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+    }
+    .navbar.active .header-links {
+        display: flex;
+        height: 50px;
+        width: 100%;
+        position: absolute;
+        top: 350px;
+        left: 0;
+        gap: 0;
+    }
+    .navbar.active .header-links li {
+        background: #2089b2;
+        flex: 1 1 auto; /* width: 50% */
+        font-size: 1rem;
+        text-align: center;
+        line-height: 50px;
+    }
+    .navbar.active .header-nav #gnb li {
+        padding: .5rem 2rem;
+    }
+    .navbar.active .header-nav #gnb li.current {
+        border-radius: 30px;
+        color: #58c8f6;
+        background:#eaeaea;
+    }    
+    .navbar.active .header-links:hover li {
+        background:#58c8f6
+    }
+    .navbar.active #gnb {
+        flex-direction: column;
+        gap: .5rem 0
+    }
+    .navbar-wrap {
         justify-content: space-between;
-        margin: 0 1rem;
+        margin: 0 1rem
     }
     #burger {
         display: block;
@@ -311,10 +329,10 @@ header {
     }
     header {
         height: 400px;
-        background: url('../images/visual_bg.jpg') no-repeat 0% top / cover;
+        background: url('../images/visual_bg.jpg') no-repeat 0% top / cover;            
     }
     .slogan {
-        height: 400px;
+        height: 400px
     }
     .balloon {
         display: none;
@@ -322,35 +340,35 @@ header {
     .text {
         margin: 50px 0 0 4em;
         font-size: 20px;
+
     }
-    .text p:nth-child(1) {
-        font-size: 2em;        /*위에서 20px로 사이즈를 정했기 때문에 1em=20px*/
+    .text p:nth-child(1){
+        font-size: 2em
     }
-    .text p:nth-child(2) {
-        font-size: 1.7em;        /*위에서 20px로 사이즈를 정했기 때문에 1em=20px*/
+    .text p:nth-child(2){
+        font-size: 1.7em
     }
     .co {
         width: 90%;
-        height: 515px;
-        margin: 0 auto;
         background: url("../images/co_img.png") no-repeat 45% 10%,
                     url("../images/corightbg.jpg") no-repeat 0 0 / cover;
     }
     .cotext {
         width: 90%;
         left: 5%;
-        top: 45%;
+        top: 45%
     }
     .btn-down {
-        top: 80%;
         left: 5%;
+        top: 80%;
     }
+
     .bg {
         background-color: #F5F5F5;
         background-image: none;
     }
     .category {
-        flex-direction: column; /*플렉스 아이템 정렬 : 기본 row(행)을 column(열)로 변경*/
+        flex-direction: column; /* 플렉스 아이템 정렬 : 기본 row(행)을 column(열) 변경 */
         gap: 15px 0;
         width: 90%;
         margin: 0 auto;
@@ -359,11 +377,11 @@ header {
         height: 250px;
         overflow: hidden;
     }
-    .categoryli:nth-child(1) img {
-        margin: -140px 0 0 0;
+    .category li:nth-child(1) img {
+        margin: -140px 0 0 0
     }
-    .categoryli:nth-child(3) img {
-        margin: -250px 0 0 0;
+    .category li:nth-child(3) img {
+        margin: -250px 0 0 0
     }
     .category figure {
         height: 100%;
@@ -372,34 +390,36 @@ header {
         width: 100%;
         object-fit: cover;
     }
-    .category figure figcaption {
-        bottom:0;
+    .category figure figcaption{
         width: auto;
-        padding: 15px 20px;
+        padding: 15px 20px
     }
+
     .site-info {
         flex-direction: column;
         align-items: center;
-        background: #000;
+        background: #000000
     }
     .footer-logo {
         width: 100%;
         text-align: center;
         margin: 0;
         background: white;
-        padding: 15px 0;
+        padding: 15px 0
     }
     .info {
         width: 90%;
-        text-align: center;
-        color: white;
         padding: 30px 0;
+        text-align: center;
+        color: white
     }
-    /* contact-map */
+
+    /* contact - map */
     .map-wrap {
         flex-direction: column;
         width: 90%;
         height: auto;
+        margin: 0 auto 150px auto;
     }
     #map {
         width: 100%;
@@ -412,19 +432,24 @@ header {
         float: left;
     }
     .info li {
-        overflow: hidden;
+        overflow: hidden;        
     }
-    .info li:nth-child(2)::before, .info li::after {
+    .info li:nth-child(2)::before, .info li:nth-child(2)::after {
         content: "";
         display: block;
         width: 100%;
         height: 1px;
         background: #eaeaea;
         margin: 20px 0;
-    }
+    } 
     .info .text {
-        margin: 0;
+        margin: 0
     }
-
+    .info p {
+        color: #eaeaea;
+        font-size: .75rem;
+        text-align: center;
+        line-height: 1rem;
+    }
 
 }
